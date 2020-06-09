@@ -17,7 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Auth::routes();
+
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/beneficio', 'HomeController@beneficio')->name('beneficio');
+
+Route::get('/consultardadosbancario', 'BancariosController@index')->name('consultardadosbancarioto');
+Route::get('/dadosbancario/ver/{beneficio}', 'BancariosController@show')->name('verdadosbancario');
+
+Route::get('/consultarbeneficio', 'BeneficiosController@index')->name('consultarbeneficio');
+Route::get('/beneficio/ver/{beneficio}', 'BeneficiosController@show')->name('verbeneficio');
