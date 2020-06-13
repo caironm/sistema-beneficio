@@ -192,10 +192,16 @@
                                         <label for="beneficiario"><strong>Margem Disponível Cartão:</strong></label>
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->margemDisponivelCartao}}</label>
                                         <br>
+                                        <label for="beneficiario"><strong>Percentual Margem Disponível Cartão:</strong></label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->percentualmargemDisponivelCartao}}</label>
+                                        <br>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
+                                        <label for="beneficiario"><strong>NIT:</strong></label>
+                                        <label type="text" name="beneficioClientes" id="beneficioClientes">{{$benefs->nit}}</label>
+                                        <br>
                                         <label for="beneficiario"><strong>Sexo:</strong></label>
                                         <label type="text" name="beneficioClientes" id="beneficioClientes">{{$benefs->sexo}}</label>
                                         <br>
@@ -211,13 +217,16 @@
                                         <label for="beneficiario"><strong>Quantidade Empréstimo:</strong></label>
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->quantidadeEmprestimo}}</label>
                                         <br>
-                                        <label for="beneficiario"><strong>Percentual Margem Disponível Cartão:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->percentualmargemDisponivelCartao}}</label>
+                                        <label for="beneficiario"><strong>Percentual Margem Total Cartão?:</strong></label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->percentualMargemTotalCartao}}</label>
                                         <br>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
+                                        <label for="beneficiario"><strong>Identidade:</strong></label>
+                                        <label type="text" name="beneficioClientes" id="beneficioClientes">{{$benefs->identidade}}</label>
+                                        <br>
                                         <label for="nomeclientes"><strong>DIB</strong></label>
                                         <label type="text" name="cpfClientes" id="cpfClientes">{{$benefs->dib}}</label>
                                         <br />
@@ -232,9 +241,6 @@
                                         <br>
                                         <label for="beneficiario"><strong>Possui cartão?:</strong></label>
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->possuiCartao}}</label>
-                                        <br>
-                                        <label for="beneficiario"><strong>Percentual Margem Total Cartão?:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->percentualMargemTotalCartao}}</label>
                                         <br>
                                     </div>
                                 </div>                                   

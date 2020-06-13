@@ -1,5 +1,5 @@
 CREATE TABLE bancarios (
-cpf int(11),
+cpf char(11),
 beneficio varchar(10), 
 banco varchar(6), 
 agencia varchar(6), 
