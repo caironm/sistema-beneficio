@@ -178,22 +178,22 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->situacaoBeneficio}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Valor Benefício:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->valorBeneficio}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->valorBeneficio}},00</label>
                                         <br>
                                         <label for="beneficiario"><strong>Bloqueio Empréstimo:</strong></label>
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->bloqueioEmprestismo}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Margem Consignado:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->baseCalculoMargemConsignavel}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->baseCalculoMargemConsignavel}},00</label>
                                         <br>
                                         <label for="beneficiario"><strong>Percentual Margem Total Empréstimo:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->percentualMargemTotalEmprestimo}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->percentualMargemTotalEmprestimo}}%</label>
                                         <br>
                                         <label for="beneficiario"><strong>Margem Disponível Cartão:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->margemDisponivelCartao}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->margemDisponivelCartao}}%</label>
                                         <br>
                                         <label for="beneficiario"><strong>Percentual Margem Disponível Cartão:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->percentualmargemDisponivelCartao}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->percentualmargemDisponivelCartao}}%</label>
                                         <br>
                                     </div>
                                 </div>
@@ -206,19 +206,37 @@
                                         <label type="text" name="beneficioClientes" id="beneficioClientes">{{$benefs->sexo}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Possui representante legal?:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->possuiRepresentanteLegalProcurador}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">
+                                        <?php
+                                            $representante_legal = $benefs->possuiRepresentanteLegalProcurador;
+                                            if ($representante_legal == 1) {
+                                                $representante_legal = 'Sim';
+                                            } else {
+                                                $representante_legal = 'Não';
+                                            }
+                                        ?>
+                                        {{$representante_legal}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Benefício permite empréstimo?:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->beneficioPermiteEmprestimo}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">
+                                        <?php
+                                            $permite_emprestimo = $benefs->beneficioPermiteEmprestimo;
+                                            if ($permite_emprestimo == 1) {
+                                                $permite_emprestimo = 'Sim';
+                                            } else {
+                                                $permite_emprestimo = 'Não';
+                                            }
+                                        ?>
+                                        {{$permite_emprestimo}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Margem Disponível Empréstimo:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->margemDisponivelEmprestimo}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->margemDisponivelEmprestimo}}%</label>
                                         <br>
                                         <label for="beneficiario"><strong>Quantidade Empréstimo:</strong></label>
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->quantidadeEmprestimo}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Percentual Margem Total Cartão?:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->percentualMargemTotalCartao}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->percentualMargemTotalCartao}}%</label>
                                         <br>
                                     </div>
                                 </div>
@@ -231,16 +249,33 @@
                                         <label type="text" name="cpfClientes" id="cpfClientes">{{$benefs->dib}}</label>
                                         <br />
                                         <label for="beneficiario"><strong>Pensão Alimentícia:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->pensaoAlimenticia}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">
+                                        <?php
+                                            $pensao_alimenticia = $benefs->pensaoAlimenticia;
+                                            if ($pensao_alimenticia == 1) {
+                                                $pensao_alimenticia = 'Sim';
+                                            } else {
+                                                $pensao_alimenticia = 'Não';
+                                            }
+                                        ?>
+                                        {{$pensao_alimenticia}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Margem Competência:</strong></label>
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->margem_competencia}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Percentual Margem Disponível Empréstimo:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->percentualMargemDisponivelEmprestimo}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->percentualMargemDisponivelEmprestimo}}%</label>
                                         <br>
                                         <label for="beneficiario"><strong>Possui cartão?:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->possuiCartao}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes"><?php
+                                            $possui_cartao = $benefs->possuiCartao;
+                                            if ($possui_cartao == 1) {
+                                                $possui_cartao = 'Sim';
+                                            } else {
+                                                $possui_cartao = 'Não';
+                                            }
+                                        ?>
+                                        {{$possui_cartao}}</label>
                                         <br>
                                     </div>
                                 </div>                                   
@@ -274,10 +309,10 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_excluidoAps_0}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Valor Parcela:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_valorParcela_0}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_valorParcela_0}},00</label>
                                         <br>
                                         <label for="beneficiario"><strong>Saldo Quitação:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_saldoQuitacao_0}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_saldoQuitacao_0}},00</label>
                                         <br>
                                     </div>
                                 </div>
@@ -299,7 +334,7 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_quantidadeParcelas_0}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Empréstimo Taxa:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_taxa_0}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_taxa_0}}%</label>
                                         <br>
                                     </div>
                                 </div>
@@ -315,7 +350,7 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_situacao_0}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Valor Emprestado:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_valorEmprestado_0}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_valorEmprestado_0}},00</label>
                                         <br>
                                         <label for="beneficiario"><strong>Quantidade Parcelas em Aberto:</strong></label>
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_quantidadeParcelasEmAberto_0}}</label>
@@ -354,10 +389,10 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_excluidoAps_1}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Valor Parcela:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_valorParcela_1}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_valorParcela_1}},00</label>
                                         <br>
                                         <label for="beneficiario"><strong>Saldo Quitação:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_saldoQuitacao_1}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_saldoQuitacao_1}},00</label>
                                         <br>
                                     </div>
                                 </div>
@@ -379,7 +414,7 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_quantidadeParcelas_1}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Empréstimo Taxa:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_taxa_1}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_taxa_1}}%</label>
                                         <br>
                                     </div>
                                 </div>
@@ -395,7 +430,7 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_situacao_1}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Valor Emprestado:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_valorEmprestado_1}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_valorEmprestado_1}},00</label>
                                         <br>
                                         <label for="beneficiario"><strong>Quantidade Parcelas em Aberto:</strong></label>
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_quantidadeParcelasEmAberto_1}}</label>
@@ -434,10 +469,10 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_excluidoAps_2}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Valor Parcela:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_valorParcela_2}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_valorParcela_2}},00</label>
                                         <br>
                                         <label for="beneficiario"><strong>Saldo Quitação:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_saldoQuitacao_2}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_saldoQuitacao_2}},00</label>
                                         <br>
                                     </div>
                                 </div>
@@ -459,7 +494,7 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_quantidadeParcelas_2}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Empréstimo Taxa:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_taxa_2}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_taxa_2}}%</label>
                                         <br>
                                     </div>
                                 </div>
@@ -475,7 +510,7 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_situacao_2}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Valor Emprestado:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_valorEmprestado_2}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_valorEmprestado_2}},00</label>
                                         <br>
                                         <label for="beneficiario"><strong>Quantidade Parcelas em Aberto:</strong></label>
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_quantidadeParcelasEmAberto_2}}</label>
@@ -514,10 +549,10 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_excluidoAps_3}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Valor Parcela:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_valorParcela_3}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_valorParcela_3}},00</label>
                                         <br>
                                         <label for="beneficiario"><strong>Saldo Quitação:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_saldoQuitacao_3}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_saldoQuitacao_3}},00</label>
                                         <br>
                                     </div>
                                 </div>
@@ -539,7 +574,7 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_quantidadeParcelas_3}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Empréstimo Taxa:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_taxa_3}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_taxa_3}}%</label>
                                         <br>
                                     </div>
                                 </div>
@@ -555,7 +590,7 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_situacao_3}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Valor Emprestado:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_valorEmprestado_3}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_valorEmprestado_3}},00</label>
                                         <br>
                                         <label for="beneficiario"><strong>Quantidade Parcelas em Aberto:</strong></label>
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_quantidadeParcelasEmAberto_3}}</label>
@@ -594,10 +629,10 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_excluidoAps_4}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Valor Parcela:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_valorParcela_4}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_valorParcela_4}},00</label>
                                         <br>
                                         <label for="beneficiario"><strong>Saldo Quitação:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_saldoQuitacao_4}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_saldoQuitacao_4}},00</label>
                                         <br>
                                     </div>
                                 </div>
@@ -619,7 +654,7 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_quantidadeParcelas_4}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Empréstimo Taxa:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_taxa_4}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_taxa_4}}%</label>
                                         <br>
                                     </div>
                                 </div>
@@ -635,7 +670,7 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_situacao_4}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Valor Emprestado:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_valorEmprestado_4}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_valorEmprestado_4}},00</label>
                                         <br>
                                         <label for="beneficiario"><strong>Quantidade Parcelas em Aberto:</strong></label>
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_quantidadeParcelasEmAberto_4}}</label>
@@ -674,10 +709,10 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_excluidoAps_5}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Valor Parcela:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_valorParcela_5}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_valorParcela_5}},00</label>
                                         <br>
                                         <label for="beneficiario"><strong>Saldo Quitação:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_saldoQuitacao_5}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_saldoQuitacao_5}},00</label>
                                         <br>
                                     </div>
                                 </div>
@@ -699,7 +734,7 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_quantidadeParcelas_5}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Empréstimo Taxa:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_taxa_5}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_taxa_5}}%</label>
                                         <br>
                                     </div>
                                 </div>
@@ -715,7 +750,7 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_situacao_5}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Valor Emprestado:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_valorEmprestado_5}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_valorEmprestado_5}},00</label>
                                         <br>
                                         <label for="beneficiario"><strong>Quantidade Parcelas em Aberto:</strong></label>
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_quantidadeParcelasEmAberto_5}}</label>
@@ -754,10 +789,10 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_excluidoAps_6}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Valor Parcela:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_valorParcela_6}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_valorParcela_6}},00</label>
                                         <br>
                                         <label for="beneficiario"><strong>Saldo Quitação:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_saldoQuitacao_6}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_saldoQuitacao_6}},00</label>
                                         <br>
                                     </div>
                                 </div>
@@ -779,7 +814,7 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_quantidadeParcelas_6}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Empréstimo Taxa:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_taxa_6}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_taxa_6}}%</label>
                                         <br>
                                     </div>
                                 </div>
@@ -795,7 +830,7 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_situacao_6}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Valor Emprestado:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_valorEmprestado_6}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_valorEmprestado_6}},00</label>
                                         <br>
                                         <label for="beneficiario"><strong>Quantidade Parcelas em Aberto:</strong></label>
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_quantidadeParcelasEmAberto_6}}</label>
@@ -834,10 +869,10 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_excluidoAps_7}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Valor Parcela:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_valorParcela_7}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_valorParcela_7}},00</label>
                                         <br>
                                         <label for="beneficiario"><strong>Saldo Quitação:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_saldoQuitacao_7}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_saldoQuitacao_7}},00</label>
                                         <br>
                                     </div>
                                 </div>
@@ -859,7 +894,7 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_quantidadeParcelas_7}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Empréstimo Taxa:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_taxa_7}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_taxa_7}}%</label>
                                         <br>
                                     </div>
                                 </div>
@@ -875,7 +910,7 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_situacao_7}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Valor Emprestado:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_valorEmprestado_7}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_valorEmprestado_7}},00</label>
                                         <br>
                                         <label for="beneficiario"><strong>Quantidade Parcelas em Aberto:</strong></label>
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_quantidadeParcelasEmAberto_7}}</label>
@@ -914,10 +949,10 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_excluidoAps_8}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Valor Parcela:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_valorParcela_8}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_valorParcela_8}},00</label>
                                         <br>
                                         <label for="beneficiario"><strong>Saldo Quitação:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_saldoQuitacao_8}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_saldoQuitacao_8}},00</label>
                                         <br>
                                     </div>
                                 </div>
@@ -939,7 +974,7 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_quantidadeParcelas_8}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Empréstimo Taxa:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_taxa_8}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_taxa_8}}%</label>
                                         <br>
                                     </div>
                                 </div>
@@ -955,7 +990,7 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_situacao_8}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Valor Emprestado:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_valorEmprestado_8}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->emprestimo_valorEmprestado_8}},00</label>
                                         <br>
                                         <label for="beneficiario"><strong>Quantidade Parcelas em Aberto:</strong></label>
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->emprestimo_quantidadeParcelasEmAberto_8}}</label>
@@ -994,7 +1029,7 @@
                                         <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->cartao_excluidoAps_0}}</label>
                                         <br>
                                         <label for="beneficiario"><strong>Valor Reservado:</strong></label>
-                                        <label type="text" name="nomeClientes" id="nomeClientes">{{$benefs->cartao_valorReservado_0}}</label>
+                                        <label type="text" name="nomeClientes" id="nomeClientes">R$ {{$benefs->cartao_valorReservado_0}},00</label>
                                         <br>
                                     </div>
                                 </div>
